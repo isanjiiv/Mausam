@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Mausam Sharma | Procurement Engineer</title>
+  <meta name="description" content="Portfolio of Mausam Sharma, a Procurement Engineer specializing in Strategic Sourcing, Supply Chain Management, and Cost Reduction." />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    /* --- 1. VARIABLES & THEME --- */
+    :root {
+      /* Corporate / Industrial Theme */
+      --primary: #1e293b;   /* Slate 800 - Deep Navy */
+      --secondary: #334155; /* Slate 700 */
+      --accent: #10b981;    /* Emerald 500 */
+      --accent-hover: #059669;
+      
+      --bg-body: #f1f5f9;   /* Light Grey Background */
+      --bg-card: #ffffff;   /* Pure White Cards */
+      
+      --text-main: #0f172a;
+      --text-muted: #64748b;
+      
+      --font-heading: 'Montserrat', sans-serif;
+      --font-body: 'Open Sans', sans-serif;
+      
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.1);
+      --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1);
+      
+      --container: 1200px;
+      --transition: all 0.3s ease;
+    }
+
+    /* --- 2. GLOBAL RESET --- */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    
+    html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+
+    body {
+      font-family: var(--font-body);
+      background-color: var(--bg-body);
+      color: var(--text-main);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    a { text-decoration: none; color: inherit; transition: var(--transition); }
+    ul { list-style: none; }
+    img { max-width: 100%; display: block; }
+    
+    h1, h2, h3, h4 { 
+      font-family: var(--font-heading); 
+      color: var(--primary);
+      line-height: 1.2;
+    }
+
+    .container {
+      width: min(90%, var(--container));
+      margin-inline: auto;
+    }
+
+    /* --- 3. UTILITIES & COMPONENTS --- */
+    .btn {
+      display: inline-block;
+      padding: 12px 28px;
+      font-weight: 600;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: var(--transition);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      font-size: 0.9rem;
+      border: none;
+      text-align: center;
+    }
+
+    .btn-primary {
+      background-color: var(--primary);
+      color: #fff;
+      box-shadow: 0 4px 14px rgba(30, 41, 59, 0.25);
+    }
+    .btn-primary:hover {
+      background-color: var(--secondary);
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      background: transparent;
+      border: 2px solid var(--primary);
+      color: var(--primary);
+    }
+    .btn-outline:hover {
+      background: var(--primary);
+      color: #fff;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 3.5rem;
+    }
+    /* Fluid typography for headings */
+    .section-title h2 {
+      font-size: clamp(2rem, 5vw, 2.5rem);
+      position: relative;
+      display: inline-block;
+      padding-bottom: 15px;
+    }
+    .section-title h2::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 4px;
+      background-color: var(--accent);
+    }
+
+    /* Cards */
+    .card {
+      background: var(--bg-card);
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: var(--shadow-sm);
+      border-top: 4px solid transparent;
+      transition: var(--transition);
+      height: 100%;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-lg);
+      border-top-color: var(--accent);
+    }
+
+    /* --- 4. NAVIGATION --- */
+    header {
+      background: #fff;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .nav-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 80px;
+    }
+
+    .brand {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: -1px;
+    }
+    .brand span { color: var(--accent); }
+
+    .nav-menu { display: flex; gap: 2rem; }
+    .nav-menu a {
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: var(--secondary);
+    }
+    .nav-menu a:hover { color: var(--accent); }
+
+    .hamburger { display: none; background: none; border: none; font-size: 1.5rem; cursor: pointer; color: var(--primary); padding: 10px; }
+
+    /* --- 5. HERO SECTION --- */
+    .hero {
+      padding-top: 140px;
+      padding-bottom: 80px;
+      background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+      position: relative;
+      overflow: hidden;
+      min-height: auto;
+    }
+    
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 4rem;
+    }
+
+    /* Fluid Typography: 2.5rem on mobile, up to 3.5rem on desktop */
+    .hero-text h1 {
+      font-size: clamp(2.5rem, 5vw, 3.5rem); 
+      margin-bottom: 1.5rem;
+      color: var(--primary);
+    }
+    .hero-text h1 span { color: var(--accent); }
+    
+    .hero-subtitle {
+      font-size: clamp(1rem, 2vw, 1.25rem);
+      color: var(--text-muted);
+      margin-bottom: 2.5rem;
+      font-weight: 500;
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 2rem;
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid #cbd5e1;
+      flex-wrap: wrap; 
+    }
+    .stat-item h4 { font-size: clamp(1.5rem, 3vw, 2rem); color: var(--primary); margin-bottom: 0; }
+    .stat-item p { font-size: 0.9rem; color: var(--text-muted); white-space: nowrap; }
+
+    /* CIRCULAR IMAGE STYLES */
+    .hero-image {
+      position: relative;
+      display: flex;
+      justify-content: center;
+    }
+    .hero-image img {
+      width: 380px;  
+      height: 380px; 
+      object-fit: cover; 
+      border-radius: 50%;
+      box-shadow: var(--shadow-lg); 
+      border: 8px solid #fff; 
+      z-index: 2;
+      position: relative;
+      max-width: 100%;
+    }
+
+    /* --- 6. SKILLS (Tags Style) --- */
+    .skills-wrapper {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive columns */
+      gap: 2rem;
+    }
+    .skill-category h3 { font-size: 1.2rem; margin-bottom: 1rem; border-left: 4px solid var(--accent); padding-left: 10px; }
+    .skill-tags { display: flex; flex-wrap: wrap; gap: 0.8rem; }
+    .tag {
+      background: #fff;
+      border: 1px solid #cbd5e1;
+      padding: 6px 14px;
+      border-radius: 50px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--secondary);
+    }
+    .tag i { color: var(--accent); margin-right: 6px; }
+
+    /* --- 7. EXPERIENCE (Timeline) --- */
+    .timeline {
+      position: relative;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .timeline::after {
+      content: '';
+      position: absolute;
+      width: 2px;
+      background-color: #cbd5e1;
+      top: 0;
+      bottom: 0;
+      left: 20px;
+      margin-left: -1px;
+    }
+    .timeline-item {
+      padding: 10px 10px 10px 40px;
+      position: relative;
+      background-color: inherit;
+      width: 100%;
+      margin-bottom: 2rem;
+    }
+    .timeline-item::after {
+      content: '';
+      position: absolute;
+      width: 16px;
+      height: 16px;
+      right: -17px;
+      background-color: #fff;
+      border: 4px solid var(--accent);
+      top: 15px;
+      border-radius: 50%;
+      z-index: 1;
+      left: 11px;
+    }
+    .timeline-content {
+      padding: 20px 25px;
+      background-color: white;
+      position: relative;
+      border-radius: 6px;
+      box-shadow: var(--shadow-sm);
+    }
+    .timeline-date {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--accent);
+      text-transform: uppercase;
+      margin-bottom: 5px;
+      display: block;
+    }
+
+    /* --- 8. PROJECTS & GRID --- */
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+    .project-card h3 { margin-bottom: 1rem; font-size: 1.3rem; }
+    .project-card p { font-size: 0.95rem; color: var(--text-muted); margin-bottom: 1.5rem; }
+    .project-stat {
+      display: inline-block;
+      background: rgba(16, 185, 129, 0.1);
+      color: var(--accent-hover);
+      padding: 4px 12px;
+      border-radius: 4px;
+      font-weight: 700;
+      font-size: 0.85rem;
+    }
+
+    /* --- 9. CONTACT --- */
+    .contact-section {
+      background-color: var(--primary);
+      color: white;
+      padding: 5rem 0;
+    }
+    .contact-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+    }
+    .contact-info h2 { color: white; margin-bottom: 1rem; }
+    .contact-info p { color: #94a3b8; margin-bottom: 2rem; }
+    
+    .contact-item { display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem; }
+    .contact-item i { width: 40px; height: 40px; background: rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; border-radius: 50%; color: var(--accent); flex-shrink: 0; }
+    
+    .form-group { margin-bottom: 1.2rem; }
+    .form-control {
+      width: 100%;
+      padding: 14px;
+      border: 1px solid #475569;
+      background: #1e293b; 
+      color: #fff;
+      border-radius: 4px;
+      font-family: inherit;
+    }
+
+    /* --- MOBILE MENU --- */
+    .mobile-menu {
+      position: fixed; 
+      top: 80px; 
+      left: 0; 
+      width: 100%;
+      background: white; 
+      padding: 0;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease-out;
+      z-index: 999; 
+      border-bottom: 1px solid #ddd;
+      box-shadow: var(--shadow-lg);
+    }
+    .mobile-menu.open { 
+      max-height: 400px;
+    }
+    .mobile-menu a { 
+      display: block; 
+      padding: 15px 20px; 
+      border-bottom: 1px solid #f1f5f9; 
+      color: var(--primary); 
+      font-weight: 600;
+    }
+    .mobile-menu a:hover {
+      background-color: #f8fafc;
+      color: var(--accent);
+    }
+
+    /* --- RESPONSIVE MEDIA QUERIES --- */
+
+    /* Tablet & Smaller (< 900px) */
+    @media (max-width: 900px) {
+      .hero-grid { 
+        grid-template-columns: 1fr; 
+        text-align: center; 
+        gap: 3rem; 
+      }
+      
+      .hero-text {
+        order: 2; /* Text goes below image on mobile */
+      }
+      
+      .hero-image {
+        order: 1; /* Image goes on top */
+        margin-bottom: 1rem;
+      }
+
+      .hero-image img {
+        width: 300px;
+        height: 300px;
+      }
+      
+      .hero-stats { 
+        justify-content: center; 
+      }
+      
+      .nav-menu { display: none; }
+      .hamburger { display: block; }
+      
+      .contact-container { 
+        grid-template-columns: 1fr; 
+        gap: 3rem;
+      }
+      
+      .contact-section {
+        padding: 3rem 0;
+      }
+    }
+
+    /* Mobile (< 600px) */
+    @media (max-width: 600px) {
+      .section-title { margin-bottom: 2.5rem; }
+      
+      /* Reduce section padding for small screens */
+      #about, #skills, #education, #experience, #achievements {
+        padding: 3rem 0 !important;
+      }
+      
+      .hero {
+        padding-top: 110px;
+        padding-bottom: 50px;
+      }
+      
+      .hero-text .btn {
+        width: 100%;
+        margin-bottom: 10px;
+      }
+      
+      .hero-image img {
+        width: 260px;
+        height: 260px;
+        border-width: 5px;
+      }
+      
+      .timeline { padding-left: 0; }
+      .timeline::after { left: 10px; }
+      .timeline-item { padding-left: 30px; }
+      .timeline-item::after { left: 2px; }
+      
+      .stat-item h4 { font-size: 1.5rem; }
+      
+      #education div[style*="grid-template-columns"] {
+        grid-template-columns: 1fr !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="container nav-inner">
+      <a href="#" class="brand">Mausam<span>Sharma</span>.</a>
+
+      <nav class="nav-menu">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#education">Education</a>
+        <a href="#experience">Experience</a>
+        <a href="#achievements">Achievements</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+  </header>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#education">Education</a>
+    <a href="#experience">Experience</a>
+    <a href="#achievements">Achievements</a>
+    <a href="#contact">Contact</a>
+  </div>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-text">
+          <h1>Procurement <br><span>Engineer</span></h1>
+          <p class="hero-subtitle">Strategic Sourcing | Supply Chain Optimization | Vendor Management</p>
+          <p style="margin-bottom: 2rem; color: var(--secondary);">
+            Driving operational efficiency and cost reduction through data-driven procurement strategies and robust supplier partnerships.
+          </p>
+          <div style="display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center;">
+            <a href="#contact" class="btn btn-primary">Work With Me</a>
+            <a href="#" class="btn btn-outline">Download CV <i class="fa-solid fa-download"></i></a>
+          </div>
+
+          <div class="hero-stats">
+            <div class="stat-item">
+              <h4>12%</h4>
+              <p>Avg. Cost Saving</p>
+            </div>
+            <div class="stat-item">
+              <h4>50+</h4>
+              <p>Vendor Partners</p>
+            </div>
+            <div class="stat-item">
+              <h4>$5M+</h4>
+              <p>Managed Spend</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-image">
+          <img src="https://i.postimg.cc/mDV9dJTx/Mausam.png" alt="Mausam Sharma Profile">
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="container" style="padding: 5rem 0;">
+      <div class="section-title">
+        <h2>About Me</h2>
+      </div>
+      <div class="card" style="max-width: 900px; margin: 0 auto; text-align: center;">
+        <p style="font-size: 1.1rem; color: var(--secondary); margin-bottom: 1.5rem;">
+          I am a results-oriented <strong>Procurement Engineer</strong> with over 6 years of experience in the manufacturing and engineering sectors. My expertise lies in bridging the gap between technical requirements and commercial value.
+        </p>
+        <p style="color: var(--text-muted);">
+          I specialize in <strong>strategic sourcing</strong>, negotiating complex contracts, and implementing <strong>ERP solutions</strong> (SAP Ariba/Oracle) to streamline supply chains. I have a proven track record of reducing procurement cycles and mitigating supply chain risks while maintaining high-quality standards.
+        </p>
+      </div>
+    </section>
+
+    <section id="skills" style="background-color: #e2e8f0; padding: 5rem 0;">
+      <div class="container">
+        <div class="section-title">
+          <h2>Core Competencies</h2>
+        </div>
+        
+        <div class="skills-wrapper">
+          <div class="skill-category">
+            <h3>Technical Sourcing</h3>
+            <div class="skill-tags">
+              <span class="tag"><i class="fa-solid fa-check"></i> Strategic Sourcing</span>
+              <span class="tag"><i class="fa-solid fa-check"></i> Vendor Management</span>
+              <span class="tag"><i class="fa-solid fa-check"></i> Inventory Control</span>
+              <span class="tag"><i class="fa-solid fa-check"></i> Logistics</span>
+              <span class="tag"><i class="fa-solid fa-check"></i> Tendering (RFQ/RFP)</span>
+            </div>
+          </div>
+
+          <div class="skill-category">
+            <h3>Software & ERP</h3>
+            <div class="skill-tags">
+              <span class="tag"><i class="fa-solid fa-desktop"></i> SAP MM / Ariba</span>
+              <span class="tag"><i class="fa-solid fa-desktop"></i> Oracle SCM</span>
+              <span class="tag"><i class="fa-solid fa-desktop"></i> Microsoft Power BI</span>
+              <span class="tag"><i class="fa-solid fa-desktop"></i> Advanced Excel</span>
+              <span class="tag"><i class="fa-solid fa-desktop"></i> AutoCAD (Basics)</span>
+            </div>
+          </div>
+
+          <div class="skill-category">
+            <h3>Professional Skills</h3>
+            <div class="skill-tags">
+              <span class="tag"><i class="fa-solid fa-user-tie"></i> Negotiation</span>
+              <span class="tag"><i class="fa-solid fa-user-tie"></i> Contract Law</span>
+              <span class="tag"><i class="fa-solid fa-user-tie"></i> Risk Analysis</span>
+              <span class="tag"><i class="fa-solid fa-user-tie"></i> Project Management</span>
+              <span class="tag"><i class="fa-solid fa-user-tie"></i> Stakeholder Mgmt</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="education" class="container" style="padding: 5rem 0;">
+      <div class="section-title">
+        <h2>Education</h2>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;">
+        
+        <div class="card" style="text-align: center; border-top-color: var(--accent);">
+          <i class="fa-solid fa-graduation-cap" style="font-size: 2.5rem; color: var(--primary); margin-bottom: 1rem;"></i>
+          <h3 style="font-size: 1.2rem; margin-bottom: 5px;">Master of Science</h3>
+          <p style="color: var(--accent); font-weight: 700; margin-bottom: 5px;">Supply Chain Management</p>
+          <p style="color: var(--text-muted); font-size: 0.9rem;">University of Michigan</p>
+          <div style="margin-top: 15px;">
+             <span style="background: var(--bg-body); padding: 4px 12px; border-radius: 4px; font-size: 0.8rem; color: var(--secondary); font-weight:600;">2015 - 2017</span>
+          </div>
+        </div>
+
+        <div class="card" style="text-align: center; border-top-color: var(--accent);">
+          <i class="fa-solid fa-building-columns" style="font-size: 2.5rem; color: var(--primary); margin-bottom: 1rem;"></i>
+          <h3 style="font-size: 1.2rem; margin-bottom: 5px;">Bachelor of Engineering</h3>
+          <p style="color: var(--accent); font-weight: 700; margin-bottom: 5px;">Mechanical Engineering</p>
+          <p style="color: var(--text-muted); font-size: 0.9rem;">Georgia Institute of Technology</p>
+          <div style="margin-top: 15px;">
+             <span style="background: var(--bg-body); padding: 4px 12px; border-radius: 4px; font-size: 0.8rem; color: var(--secondary); font-weight:600;">2011 - 2015</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="experience" style="background-color: #f8fafc; padding: 5rem 0; border-top: 1px solid #e2e8f0;">
+      <div class="container">
+        <div class="section-title">
+          <h2>Professional Experience</h2>
+        </div>
+        
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-content">
+              <span class="timeline-date">Jan 2022 - Present</span>
+              <h3>Senior Procurement Engineer</h3>
+              <p style="color: var(--secondary); font-weight: 600; margin-bottom: 0.5rem;">Global Tech Industries | New York</p>
+              <ul style="color: var(--text-muted); padding-left: 1rem; list-style-type: disc;">
+                <li>Lead a team of 4 buyers managing an annual spend of $12M for electrical and mechanical components.</li>
+                <li>Implemented a new vendor evaluation system, improving on-time delivery by 15%.</li>
+                <li>Negotiated long-term frame agreements resulting in a fixed 10% cost reduction on raw materials.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-content">
+              <span class="timeline-date">Jun 2019 - Dec 2021</span>
+              <h3>Supply Chain Specialist</h3>
+              <p style="color: var(--secondary); font-weight: 600; margin-bottom: 0.5rem;">BuildRight Construction | Chicago</p>
+              <ul style="color: var(--text-muted); padding-left: 1rem; list-style-type: disc;">
+                <li>Managed procurement of heavy machinery spare parts and consumables.</li>
+                <li>Optimized inventory levels using Just-In-Time (JIT) principles, freeing up $200k in cash flow.</li>
+                <li>Coordinated with international logistics partners to streamline import customs clearance.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-content">
+              <span class="timeline-date">May 2017 - May 2019</span>
+              <h3>Junior Buyer</h3>
+              <p style="color: var(--secondary); font-weight: 600; margin-bottom: 0.5rem;">AutoParts Mfg Co. | Detroit</p>
+              <ul style="color: var(--text-muted); padding-left: 1rem; list-style-type: disc;">
+                <li>Assisted in the preparation of RFQs and comparative statements (CS).</li>
+                <li>Maintained the master vendor database in SAP.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="achievements" class="container" style="padding: 5rem 0;">
+      <div class="section-title">
+        <h2>Key Achievements</h2>
+      </div>
+
+      <div class="project-grid">
+        <div class="card project-card">
+          <h3>Supplier Consolidation Project</h3>
+          <p>Analyzed a fragmented supplier base of 150+ vendors. Consolidated volume to 40 strategic partners, standardizing quality and payment terms.</p>
+          <span class="project-stat"><i class="fa-solid fa-chart-line"></i> Saved 12% Annually</span>
+        </div>
+
+        <div class="card project-card">
+          <h3>ERP Implementation (SAP)</h3>
+          <p>Key stakeholder in the migration from legacy systems to SAP S/4HANA. Led the data cleansing for 5,000+ SKUs and trained the procurement team.</p>
+          <span class="project-stat"><i class="fa-solid fa-clock"></i> Reduced PO Cycle by 40%</span>
+        </div>
+
+        <div class="card project-card">
+          <h3>Crisis Supply Chain Mgmt</h3>
+          <p>During global shortages, diversified sourcing strategies to include localized vendors, preventing line stoppages during critical production months.</p>
+          <span class="project-stat"><i class="fa-solid fa-shield-halved"></i> 0% Production Downtime</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+      <div class="container contact-container">
+        <div class="contact-info">
+          <h2>Let's Optimize Your Supply Chain</h2>
+          <p>Open to consulting opportunities and full-time roles in Strategic Sourcing and Procurement Engineering.</p>
+          
+          <div class="contact-item">
+            <i class="fa-solid fa-location-dot"></i>
+            <span>New York, USA (Open to Relocation)</span>
+          </div>
+          <div class="contact-item">
+            <i class="fa-solid fa-envelope"></i>
+            <span>mausam.sharma@email.com</span>
+          </div>
+          <div class="contact-item">
+            <i class="fa-brands fa-linkedin-in"></i>
+            <span>linkedin.com/in/mausamsharma</span>
+          </div>
+        </div>
+
+        <form action="#" method="POST" style="background: white; padding: 2rem; border-radius: 8px; box-shadow: var(--shadow-lg);">
+          <div class="form-group">
+            <label style="color: #333; font-weight: 600; font-size: 0.9rem;">Name</label>
+            <input type="text" class="form-control" style="background:#fff; border:1px solid #ccc; color:#333;" required>
+          </div>
+          <div class="form-group">
+            <label style="color: #333; font-weight: 600; font-size: 0.9rem;">Email</label>
+            <input type="email" class="form-control" style="background:#fff; border:1px solid #ccc; color:#333;" required>
+          </div>
+          <div class="form-group">
+            <label style="color: #333; font-weight: 600; font-size: 0.9rem;">Message</label>
+            <textarea rows="4" class="form-control" style="background:#fff; border:1px solid #ccc; color:#333;" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <footer style="background: #0f172a; color: #94a3b8; padding: 2rem 0; text-align: center; font-size: 0.9rem;">
+    <div class="container">
+      <p>&copy; <span id="year"></span> Mausam Sharma. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // 1. Mobile Menu Toggle
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    
+    hamburger.addEventListener('click', () => {
+      mobileMenu.classList.toggle('open');
+      const isOpen = mobileMenu.classList.contains('open');
+      hamburger.innerHTML = isOpen ? '<i class="fa-solid fa-xmark"></i>' : '<i class="fa-solid fa-bars"></i>';
+    });
+    
+    document.querySelectorAll('.mobile-menu a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.remove('open');
+        hamburger.innerHTML = '<i class="fa-solid fa-bars"></i>';
+      });
+    });
+
+    // 2. Year Update
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // 3. Simple scroll reveal animation
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = 1;
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, { threshold: 0.1 });
+
+    // Apply animation to cards and timeline items
+    document.querySelectorAll('.card, .timeline-item').forEach(el => {
+      el.style.opacity = 0; 
+      el.style.transform = 'translateY(20px)'; 
+      el.style.transition = 'all 0.6s ease-out';
+      observer.observe(el);
+    });
+  </script>
+</body>
+</html>
