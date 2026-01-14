@@ -14,6 +14,49 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <style>
+  /* --- CERTIFICATIONS GRID (Add to CSS) --- */
+.cert-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); /* Automatically fits cards */
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.cert-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border); /* Neutral, subtle border */
+  border-radius: 16px; /* Rounded corners */
+  padding: 1.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%; /* Forces all cards to be same height */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.cert-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow);
+}
+
+.cert-date {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--accent);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+  background: rgba(16, 185, 129, 0.1);
+  padding: 0.25rem 0.6rem;
+  border-radius: 4px;
+}
+
+.cert-card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  line-height: 1.4;
+}
     /* --- CSS VARIABLES (THEMING) --- */
     :root {
       /* Light Mode Defaults */
@@ -1107,43 +1150,37 @@
 </div>
 </div>
 </section>
-<section id="certifications" class="container" style="padding:5rem 0;">
+<section id="certifications" class="container" style="padding:4rem 0;">
   <div class="section-title reveal"><h2>Certifications</h2></div>
   
-  <div class="skills-wrapper" style="justify-content: center; display: grid; gap: 2rem;">
+  <div class="cert-grid reveal">
     
-    <div class="card reveal" style="display:flex; flex-direction:row; align-items:center; gap:2rem; max-width:900px; width:100%; margin:auto; border-left: 4px solid var(--accent);">
-      <div style="flex: 1;">
-        <span style="color:var(--accent); font-weight:700; font-size:0.9rem; letter-spacing:1px; display:block; margin-bottom:0.5rem;">MAR 2022</span>
-        <h3 style="font-size:1.4rem; margin-bottom:0.5rem;">Technical Trainee</h3>
-        <p style="font-weight:700; color:var(--text-heading); margin-bottom:0.5rem;">NSIC, Delhi</p>
-        <p style="color:var(--text-main);">Hands-on training in Industrial Automation 4.0, PLC, and SCADA systems.</p>
-        
-        <a href="https://drive.google.com/file/d/1mjbjIEFyVbrx5CHvS7ku4E1X4HHjnLu5/view" target="_blank" class="btn-view-cert">
-            <i class="fa-solid fa-file-certificate"></i> View Certificate
-        </a>
+    <div class="cert-card">
+      <div>
+        <span class="cert-date">Mar 2022</span>
+        <h3>Technical Trainee</h3>
+        <p><strong>NSIC, Delhi</strong><br>Hands-on training in Industrial Automation 4.0, PLC, and SCADA systems.</p>
       </div>
-      <div style="flex-shrink:0;">
-        
-      </div>
+      
+      <a href="https://drive.google.com/file/d/1mjbjIEFyVbrx5CHvS7ku4E1X4HHjnLu5/view" target="_blank" class="btn-view-cert" style="width:100%; justify-content:center;">
+          <i class="fa-solid fa-file-certificate"></i> View Certificate
+      </a>
     </div>
 
-    <div class="card reveal" style="display:flex; flex-direction:row; align-items:center; gap:2rem; max-width:900px; width:100%; margin:auto; border-left: 4px solid var(--accent);">
-        <div style="flex: 1;">
-          <h3 style="font-size:1.4rem; margin-bottom:0.5rem;">SAP MM (S/4HANA)</h3>
-          <p style="font-weight:700; color:var(--text-heading); margin-bottom:0.5rem;">Materials Management Certification</p>
-          <p style="color:var(--text-main);">Comprehensive training in SAP Materials Management module, covering P2P cycle, Inventory Management, and Logistics Invoice Verification.</p>
-          
-          <a href="https://drive.google.com/file/d/17rUgLLJbVRPvgk41Z-pbUVt1kpdvFBAw/view" target="_blank" class="btn-view-cert">
-              <i class="fa-solid fa-file-certificate"></i> View Certificate
-          </a>
-        </div>
-        
-         
-        </div>
+    <div class="cert-card">
+      <div>
+        <span class="cert-date">Certified Pro</span>
+        <h3>SAP MM (S/4HANA)</h3>
+        <p><strong>Materials Management</strong><br>Comprehensive training in SAP MM module, P2P cycle, and Inventory Management.</p>
       </div>
+      
+      <a href="https://drive.google.com/file/d/17rUgLLJbVRPvgk41Z-pbUVt1kpdvFBAw/view" target="_blank" class="btn-view-cert" style="width:100%; justify-content:center;">
+          <i class="fa-solid fa-file-certificate"></i> View Certificate
+      </a>
+    </div>
 
   </div>
+</section>
   
   <style>
   /* --- MOBILE COMPACT MODE (Add to bottom of CSS) --- */
