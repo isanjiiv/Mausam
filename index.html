@@ -181,10 +181,13 @@
 
     .nav-menu {
       display: flex;
-      gap: 1.2rem; /* Reduced spacing */
-      position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
+      gap: 1rem; /* Slightly reduced gap to save space */
+      
+      /* --- FIXED LINES BELOW --- */
+      position: static; /* Removes the forced overlap */
+      transform: none;  /* Removes the centering transform */
+      margin: 0 auto;   /* This centers the menu naturally/safely */
+    }
     }
 
     .nav-menu a {
@@ -1143,6 +1146,72 @@
   </div>
   
   <style>
+  /* --- MOBILE COMPACT MODE (Add to bottom of CSS) --- */
+  @media (max-width: 768px) {
+    
+    /* 1. Global Scale Down: This shrinks all text and spacing defined in 'rem' */
+    html {
+        font-size: 13px; /* Standard is 16px, this makes everything ~20% smaller */
+    }
+
+    /* 2. Tighter Section Spacing */
+    section, #about, #experience, #certifications, #achievements, #progression {
+        padding-top: 3rem !important;
+        padding-bottom: 3rem !important;
+    }
+
+    /* 3. Compact Hero Section */
+    .hero {
+        padding-top: 6rem !important; /* Enough space for header */
+        padding-bottom: 1rem !important;
+        min-height: auto;
+    }
+    
+    .typing-container {
+        font-size: 1.8rem; /* Smaller "Hi I'm Mausam" */
+        margin-bottom: 0.5rem;
+    }
+
+    .hero-grid {
+        gap: 2rem; /* Reduce gap between text and image */
+    }
+
+    /* 4. Compact Cards */
+    .card, .timeline-content, .evo-card {
+        padding: 1.2rem !important; /* Less padding inside white boxes */
+    }
+
+    /* 5. Tighter Grids */
+    .skills-wrapper, .evolution-grid {
+        gap: 1rem; /* Less space between cards */
+        grid-template-columns: 1fr; /* Force single column */
+    }
+
+    /* 6. Smaller Headings */
+    .section-title h2 {
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    h3 {
+        font-size: 1.2rem;
+    }
+
+    /* 7. Compact Stats in Hero */
+    .hero-stats {
+        margin-top: 1.5rem;
+        gap: 0.8rem;
+    }
+    
+    .stat-item {
+        padding: 0.6rem;
+        min-width: 45%; /* Fit 2 per row easily */
+    }
+    
+    .stat-item h4 {
+        font-size: 1.1rem;
+    }
+  }
     /* Mobile Responsive adjustment for Cert section */
     @media (max-width: 768px) {
       #certifications .card {
