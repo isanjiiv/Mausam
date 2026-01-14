@@ -181,7 +181,7 @@
 
     .nav-menu {
       display: flex;
-      gap: 2rem;
+      gap: 1rem;
       position: absolute;
       left: 50%;
       transform: translateX(-50%);
@@ -864,6 +864,7 @@
       <a href="#skills">Skills</a>
       <a href="#education">Education</a>
       <a href="#experience">Experience</a>
+      <a href="#certifications">Certifications</a>
       <a href="#achievements">Achievements</a>
       <a href="#contact">Contact</a>
     </nav>
@@ -887,6 +888,7 @@
   <a href="#skills" onclick="toggleMenu()">Skills</a>
   <a href="#education" onclick="toggleMenu()">Education</a>
   <a href="#experience" onclick="toggleMenu()">Experience</a>
+  <a href="#certifications" onclick="toggleMenu()">Certifications</a>
   <a href="#achievements" onclick="toggleMenu()">Achievements</a>
   <a href="#contact" onclick="toggleMenu()">Contact</a>
 </div>
@@ -1003,8 +1005,6 @@
 </div>
 </section>
 
-
-
 <section id="experience" style="background:var(--bg-light);padding:5rem 0;">
 <div class="container">
 <div class="section-title reveal"><h2>Professional Experience</h2></div>
@@ -1059,7 +1059,55 @@
 </div>
 </section>
 
-<section id="achievements" class="container" style="padding:5rem 0;">
+<section id="certifications" class="container" style="padding:5rem 0;">
+  <div class="section-title reveal"><h2>Certifications</h2></div>
+  <div class="skills-wrapper" style="justify-content: center;">
+     <div class="skills-wrapper" style="justify-content: center;">
+    
+    <div class="card reveal" style="display:flex; flex-direction:row; align-items:center; gap:2rem; max-width:900px; margin:auto; border-left: 4px solid var(--accent);">
+      
+      <div style="flex: 1;">
+        <span style="color:var(--accent); font-weight:700; font-size:0.9rem; letter-spacing:1px; display:block; margin-bottom:0.5rem;">Sep 2023</span>
+        <h3 style="font-size:1.4rem; margin-bottom:0.5rem;">SAP MM S4 HANA</h3>
+        <p style="font-weight:700; color:var(--text-heading); margin-bottom:0.5rem;">APTRON, Noida Sec 15</p>
+        <p style="color:var(--text-main);">The SAP MM S/4HANA certification validates core skills in procurement and materials management on SAP S/4HANA.</p>
+      </div>
+
+      <div style="flex-shrink:0;">
+        <img src="image_d32742.png" alt="NSIC Certificate" style="max-width: 250px; width:100%; border-radius:8px; border:1px solid var(--card-border); box-shadow: var(--shadow);">
+      </div>
+
+  </div>
+    <div class="card reveal" style="display:flex; flex-direction:row; align-items:center; gap:2rem; max-width:900px; margin:auto; border-left: 4px solid var(--accent);">
+      
+      <div style="flex: 1;">
+        <span style="color:var(--accent); font-weight:700; font-size:0.9rem; letter-spacing:1px; display:block; margin-bottom:0.5rem;">MAR 2022</span>
+        <h3 style="font-size:1.4rem; margin-bottom:0.5rem;">Technical Trainee</h3>
+        <p style="font-weight:700; color:var(--text-heading); margin-bottom:0.5rem;">NSIC, Delhi</p>
+        <p style="color:var(--text-main);">Hands-on training in Industrial Automation 4.0, PLC, and SCADA systems.</p>
+      </div>
+
+      <div style="flex-shrink:0;">
+        <img src="image_d32742.png" alt="NSIC Certificate" style="max-width: 250px; width:100%; border-radius:8px; border:1px solid var(--card-border); box-shadow: var(--shadow);">
+      </div>
+       </div>
+    
+
+  
+  <style>
+    /* Mobile Responsive adjustment for Cert section */
+    @media (max-width: 768px) {
+      #certifications .card {
+        flex-direction: column !important;
+        text-align: center;
+      }
+      #certifications img {
+        max-width: 100% !important;
+      }
+    }
+  </style>
+</section>
+<section id="achievements" class="container" style="padding:5rem 0; background:var(--bg-light);">
 <div class="section-title reveal"><h2>Key Achievements</h2></div>
 
 <div class="skills-wrapper">
@@ -1085,7 +1133,7 @@
 </div>
 </section>
 
-<section id="progression" style="background:var(--bg-light); padding:5rem 0;">
+<section id="progression" style="padding:5rem 0;">
   <div class="container">
     
     <div class="section-title reveal">
@@ -1219,7 +1267,7 @@
   </div>
 </section>
   
-  <section id="education" class="container" style="padding:5rem 0;">
+  <section id="education" class="container" style="padding:5rem 0; background:var(--bg-light);">
 <div class="section-title reveal"><h2>Education</h2></div>
 
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2rem;">
