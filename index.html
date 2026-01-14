@@ -968,10 +968,11 @@
 <h3>Manufacturing Procurement</h3>
 <div class="skill-tags">
 <span class="tag">Machinery Sourcing</span>
-<span class="tag">Flour Mill Projects</span>
+<span class="tag">Flour Mill Projects (TurnKey Industrial Projects)</span>
 <span class="tag">Vendor Development</span>
 <span class="tag">Cost Benchmarking</span>
 <span class="tag">Industrial Components</span>
+<span class="tag">Service Engineer & AMC Coordination</span>
 </div>
 </div>
 
@@ -981,8 +982,9 @@
 <span class="tag">SAP MM (S/4HANA)</span>
 <span class="tag">PR / PO / STO</span>
 <span class="tag">P2P Cycle</span>
-<span class="tag">3PL Coordination</span>
+<span class="tag">3PL Multi-location Logistics</span>
 <span class="tag">E-way Bills & Invoicing</span>
+<span class="tag">Payment Terms & Vendor Credit Managemnet</span>
 </div>
 </div>
 
@@ -994,6 +996,7 @@
 <span class="tag">AutoCAD</span>
 <span class="tag">SolidWorks</span>
 <span class="tag">PLC & SCADA Basics</span>
+<span class="tag">Multi Vendor Price Comparison Models</span>
 </div>
 </div>
 
@@ -1015,11 +1018,18 @@
 <h3>Purchase Executive</h3>
 <p style="font-weight:600;color:var(--text-heading);">Grain Milling Solutions Pvt Ltd | Noida</p>
 <ul>
-<li>Independently leading procurement for flour mill machinery manufacturing.</li>
-<li>Managing ₹3–4 Cr monthly procurement spend with zero production downtime.</li>
-<li>Expanded vendor base through direct negotiation and cost benchmarking.</li>
-<li>Maintaining real-time PR, PO, inventory, and payment dashboards.</li>
-</ul>
+    <li>Independently leading procurement for flour mill machinery manufacturing.</li>
+    
+    <li><strong>Budget Management:</strong> Managing a monthly procurement budget of ₹3Cr - ₹4Cr with complete financial accountability.</li>
+    
+    <li><strong>Market Intelligence:</strong> Performing daily market research and comparing 3-4 vendors per lot to evaluate Quality, Lead Time, and Cost (L1 Analysis).</li>
+    
+    <li><strong>Service & Quality Control:</strong> Managing post-delivery quality issues, coordinating vendor replacements, and arranging Service Engineer visits for technical resolution.</li>
+    
+    <li><strong>Logistics & 3PL:</strong> Coordinating with 3rd Party Logistics for material dispatch to various site locations across India, including E-way bills and invoicing.</li>
+    
+    <li><strong>Strategic Negotiation:</strong> Directly negotiating with brands and local vendors for competitive pricing and favorable payment terms.</li>
+  </ul>
 </div>
 </div>
 
@@ -1260,12 +1270,12 @@
             <form action="#" method="POST">
                 <div class="form-group">
                     <label for="name">Your Name</label>
-                    <input type="text" id="name" class="form-control" placeholder="John Doe">
+                    <input type="text" id="name" class="form-control" placeholder="Mausam Sharma">
                 </div>
                 
                 <div class="form-group">
                     <label for="email">Your Email</label>
-                    <input type="email" id="email" class="form-control" placeholder="john@example.com">
+                    <input type="email" id="email" class="form-control" placeholder="mausam@example.com">
                 </div>
                 
                 <div class="form-group">
@@ -1347,13 +1357,14 @@ const roles = [
     "Procurement Professional", 
     "Strategic Sourcing Expert", 
     "SAP MM User", 
-    "Supply Chain Manager"
+    "SCM & Logistics Professional"
+    
 ];
 
 let roleIndex = 0;
 let charIndex = 0;
 let isDeleting = false;
-let typeSpeed = 100;
+let typeSpeed = 10000;
 
 function typeEffect() {
     const currentRole = roles[roleIndex];
@@ -1361,7 +1372,7 @@ function typeEffect() {
     if (isDeleting) {
         textElement.textContent = currentRole.substring(0, charIndex - 1);
         charIndex--;
-        typeSpeed = 50; // Faster when deleting
+        typeSpeed = 30; // Faster when deleting
     } else {
         textElement.textContent = currentRole.substring(0, charIndex + 1);
         charIndex++;
