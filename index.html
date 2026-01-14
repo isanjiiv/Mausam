@@ -866,6 +866,47 @@
           font-size: 2rem;
       }
     }
+    /* --- EXPERIENCE TIMELINE ANIMATION --- */
+
+/* 1. Override the default animation just for timeline items */
+#experience .timeline-item.reveal {
+  transform: translateX(50px); /* Start 50px to the right */
+  opacity: 0;
+  transition: all 0.8s cubic-bezier(0.25, 1, 0.5, 1); /* Smooth 'ease-out' feel */
+}
+
+/* 2. The active state (when scrolled into view) */
+#experience .timeline-item.reveal.active {
+  transform: translateX(0); /* Slide into place */
+  opacity: 1;
+}
+
+/* 3. Stagger Effect: Make the second item wait 0.3s before appearing */
+#experience .timeline-item:nth-child(2).reveal {
+  transition-delay: 0.3s;
+}
+
+/* 4. Hover Effect for the Content Card */
+.timeline-content {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.timeline-content:hover {
+  transform: translateY(-5px); /* Moves up slightly */
+  box-shadow: 0 15px 30px rgba(16, 185, 129, 0.2); /* Adds a green glow shadow */
+  border-color: var(--accent); /* Highlights border */
+}
+
+/* 5. Pulse animation for the timeline dots */
+.timeline-item::after {
+  animation: dotPulse 2s infinite;
+}
+
+@keyframes dotPulse {
+  0% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.4); }
+  70% { box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+}
   </style>
 </head>
 
